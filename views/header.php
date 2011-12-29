@@ -11,6 +11,6 @@
         ?>" />
         <title>db panel</title>
         <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css' />
-        <link href='style.css' rel='stylesheet' type='text/css' />
+        <link href='css/style.css' rel='stylesheet' type='text/css' />
     </head>
     <body>
