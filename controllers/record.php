@@ -5,7 +5,7 @@
                 Redirect( 'session/create' );
             }
             else {
-                $link = @mysql_connect( 'localhost', $_SESSION[ 'username' ], $_SESSION[ 'password' ] );
+                $link = db_connect( $_SESSION[ 'username' ], $_SESSION[ 'password' ] );
                 if ( $link === false ) {
                     view( 'login', array( 'error' => true ) );
                 }

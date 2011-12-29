@@ -27,6 +27,14 @@
     // mysql_connect( 'localhost', $settings[ 'db' ][ 'user' ], $settings[ 'db' ][ 'password' ] ) or die( mysql_error() );
     // mysql_select_db( $settings[ 'db' ][ 'name' ] ) or die( mysql_error() );
 
+    function db_connect( $username, $password, $host = 'localhost' ) {
+        $link = @mysql_connect( $host, $username, $password );
+        if ( $link !== false ) {
+            mysql_query( 'SET NAMES utf8' );
+        }
+        return $link;
+    }
+
     function db( $sql, $bind = false ) {
         if ( $bind == false ) {
             $bind = array();

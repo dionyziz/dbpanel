@@ -27,6 +27,6 @@
         return $ret;
     }
     function db_all( $table ) {
-        return db_array( 'SELECT * FROM ' . $table, false, false, MYSQL_ASSOC );
+        return db_array( 'SELECT * FROM ' . $table . ' LIMIT 50', false, false, MYSQL_ASSOC );
     }
 ?>
