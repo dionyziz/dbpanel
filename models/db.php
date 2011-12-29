@@ -155,20 +155,4 @@
         }
         return $ret;
     }
-    function db_list_databases() {
-        $ret = array();
-        $dbs = db_array( 'SHOW DATABASES' );
-        foreach ( $dbs as $db ) {
-            $ret[] = $db[ 'Database' ];
-        }
-        return $ret;
-    }
-    function db_list_tables() {
-        $ret = array();
-        $tables = db_array( 'SHOW TABLES' );
-        foreach ( $tables as $table ) {
-            $ret[] = $table[ 0 ];
-        }
-        return $ret;
-    }
 ?>

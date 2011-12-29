@@ -19,7 +19,7 @@
         public function getURL() {
             return $this->url;
         }
-        public function __construct( $url = '' ) {
+        public function __construct( $url ) {
             $this->url = $url;
             parent::__construct( 'URL exception', 0, null );
         }
@@ -41,4 +41,5 @@
     global $settings;
     $settings = include 'settings.php';
     include 'models/db.php';
+    include 'models/db-admin.php';
 ?>
