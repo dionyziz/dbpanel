@@ -94,7 +94,8 @@
                     }
                 }
                 // TODO: paginate
-                $data = db_array( 'SELECT * FROM ' . $selected_table );
+                // TODO: move queries to models
+                $data = db_array( 'SELECT * FROM ' . $selected_table, false, false, MYSQL_ASSOC );
                 ?><table><?php
                 foreach ( $data as $row ) {
                     ?><tr><?php

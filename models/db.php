@@ -64,7 +64,7 @@
         }
         return $res;
     }
-    function db_array( $sql, $bind = false, $id_column = false, $assoc = MYSQL_ASSOC ) {
+    function db_array( $sql, $bind = false, $id_column = false, $assoc = MYSQL_BOTH ) {
         $res = db( $sql, $bind );
         $rows = array();
         if ( $id_column !== false ) {
