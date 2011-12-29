@@ -1,4 +1,6 @@
 <?php
+    $selected_db = $db;
+    $selected_table = $table;
     $dbs = db_list_databases();
     ?><select id='db'><?php
     $selected_db_exists = false;

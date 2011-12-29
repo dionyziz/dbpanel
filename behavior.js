@@ -3,7 +3,7 @@ function fragmentReplace( key, value ) {
     var urlQuery;
     var parts = window.location.href.split( '?' );
 
-    if ( parts.length == 0 ) {
+    if ( parts.length == 1 ) {
         urlQuery = '';
     }
     else {

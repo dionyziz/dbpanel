@@ -8,10 +8,10 @@
                 $link = @mysql_connect( 'localhost', $_SESSION[ 'username' ], $_SESSION[ 'password' ] );
                 if ( $link === false ) {
                     $error = true;
-                    view( 'login' );
+                    view( 'login', compact( 'error' ) );
                 }
                 else {
-                    view( 'navigation' );
+                    view( 'navigation', compact( 'db', 'table' ) );
                 }
             }
         }
