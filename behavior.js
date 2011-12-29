@@ -38,3 +38,4 @@ $( '#table' ).change( function () {
     fragmentReplace( 'table', this.value );
     // TODO: create new table
 } );
+$( '#username' ).focus();

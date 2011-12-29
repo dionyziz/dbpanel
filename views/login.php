@@ -1,5 +1,5 @@
 <div id='login'>
-    <form action='' method='post'>
+    <form action='session/create' method='post'>
         <h2>Sign into your database</h2>
         <?php
         if ( $error ) {
