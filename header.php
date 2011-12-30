@@ -37,4 +37,5 @@
     global $settings;
     $settings = include 'settings.php';
     include 'models/db.php';
+    include 'models/db-admin.php';
 ?>
