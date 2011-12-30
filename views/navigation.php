@@ -47,4 +47,5 @@
     echo htmlspecialchars( $username );
 ?>@<?php
     echo htmlspecialchars( $hostname );
+    <a href=''>Sign out</a>
 ?></div>
