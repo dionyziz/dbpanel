@@ -83,6 +83,9 @@ a#account {
     float: right;
     padding: 3px 5px;
 }
+.topbar a:hover {
+    background-color: #4c4c4c;
+}
 .topbar {
     background: #2d2d2d;
     padding: 3px;
