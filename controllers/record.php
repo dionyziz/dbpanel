@@ -28,7 +28,8 @@
                             $columns = db_describe( $selected_table );
                         }
                     }
-                    view( 'navigation', compact( 'dbs', 'tables', 'selected_db', 'selected_table' ) );
+                    $username = $_SESSION[ 'username' ];
+                    view( 'navigation', compact( 'dbs', 'tables', 'selected_db', 'selected_table', 'username' ) );
                     $records = db_all( $selected_table );
                     view( 'record/listing', compact( 'columns', 'records' ) );
                 }
