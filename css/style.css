@@ -1,5 +1,6 @@
 body {
     font: 12px/18px 'Droid Sans', 'Lucida Grande', Helvetica, Verdana, sans-serif;
+    margin: 0;
 }
 form {
     line-height: 26px;
@@ -76,8 +77,13 @@ span {
     border: 2px solid red;
 }
 a#account {
-    color: #36c;
+    color: white;
     text-decoration: none;
     font-size: 110%;
     float: right;
+    padding: 3px 5px;
+}
+.topbar {
+    background: #2d2d2d;
+    padding: 3px;
 }
