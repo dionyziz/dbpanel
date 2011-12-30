@@ -6,7 +6,7 @@
         public function create( $username, $password ) {
             $_SESSION[ 'username' ] = $username;
             $_SESSION[ 'password' ] = $password;
-            Redirect();
+            redirect();
         }
     }
 ?>

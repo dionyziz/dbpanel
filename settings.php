@@ -1,5 +1,5 @@
 <?php
     return array(
-        'url' => 'http://dionyziz.kamibu.com/dbpanel/'
+        'url' => 'http://mariosal.com/dbpanel/'
     );
 ?>
