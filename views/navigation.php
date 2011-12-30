@@ -1,5 +1,5 @@
-<?php
-    ?><select id='db'><?php
+<div class='topbar'>
+    <select id='db'><?php
     foreach ( $dbs as $db ) {
         ?><option<?php
         if ( $selected_db == $db ) {
@@ -37,4 +37,7 @@
         // TODO: prompt to create table
         ?>No tables found.<?php
     }
-?>
+    ?><a id='account' href=''><?php
+    echo htmlspecialchars( $username );
+    ?>@localhost</a>
+</div>
