@@ -1,5 +1,6 @@
 <?php
     session_start();
+    ob_start();
 
     class NotAuthorized extends Exception {}
     class InvalidInput extends Exception {}
@@ -28,9 +29,15 @@
     function redirect( $url = '' ) {
         throw new RedirectException( $url );
     }
-    function view( $path, $variables = array() ) {
+    function view( $path, $variables = array(), $initial = false ) {
         extract( $variables );
+        if ( $initial ) {
+            include 'views/header.php';
+        }
         include 'views/' . $path . '.php';
+        if ( $initial ) {
+            include 'views/footer.php';
+        }
     }
     global $settings;
     $settings = include 'settings.php';

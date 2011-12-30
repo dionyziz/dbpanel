@@ -39,5 +39,12 @@
     }
     ?><a id='account' href=''><?php
     echo htmlspecialchars( $username );
-    ?>@localhost</a>
+    ?>@<?php
+    echo htmlspecialchars( $hostname );
+    ?></a>
 </div>
+<div id='accountmanagement'><?php
+    echo htmlspecialchars( $username );
+?>@<?php
+    echo htmlspecialchars( $hostname );
+?></div>

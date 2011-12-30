@@ -1,8 +1,8 @@
 <?php
     class RecordController {
         public function listing( $db, $table ) {
-            include 'views/header.php';
             include 'controllers/header.php';
+            include 'views/header.php';
             $selected_table = HeaderController::View( $db, $table );
             if ( $selected_table !== false ) {
                 $records = db_all( $selected_table );
