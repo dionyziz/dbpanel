@@ -1,5 +1,6 @@
 <?php
-    // version 2
+    session_start();
+
     class NotAuthorized extends Exception {}
     class InvalidInput extends Exception {}
     class NotImplemented extends Exception {
@@ -19,20 +20,15 @@
         public function getURL() {
             return $this->url;
         }
-        public function __construct( $url = '' ) {
+        public function __construct( $url ) {
             $this->url = $url;
             parent::__construct( 'URL exception', 0, null );
         }
     }
-
-    session_start();
-    function Redirect( $url = '' ) {
+    function redirect( $url = '' ) {
         throw new RedirectException( $url );
     }
-    function view( $path, $variables = false ) {
-        if ( $variables === false ) {
-            $variables = array();
-        }
+    function view( $path, $variables = array() ) {
         extract( $variables );
         include 'views/header.php';
         include 'views/' . $path . '.php';
