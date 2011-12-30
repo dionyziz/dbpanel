@@ -30,9 +30,7 @@
     }
     function view( $path, $variables = array() ) {
         extract( $variables );
-        include 'views/header.php';
         include 'views/' . $path . '.php';
-        include 'views/footer.php';
     }
     global $settings;
     $settings = include 'settings.php';
