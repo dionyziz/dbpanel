@@ -13,7 +13,7 @@
                     $order = 'ASC';
                 }
                 $records = db_all( $selected_table, $sort, $order );
-                view( 'record/listing', compact( 'columns', 'records' ) );
+                view( 'record/listing', compact( 'columns', 'records', 'sort', 'order' ) );
             }
             include 'views/footer.php';
         }

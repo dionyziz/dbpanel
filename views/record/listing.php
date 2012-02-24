@@ -6,13 +6,17 @@
         <thead>
             <tr>
             <?php
-            $vars = array();
-            foreach ( $_GET as $key => $value ) {
-                $vars[ $key ] = $value;
-            }
+            // TODO: empty tables should not be sortable
+            $vars = $_GET;
             foreach ( $columns as $column ) {
-                ?><th><a href='?<?php
+                ?><th><a <?php
+                if ( $column == $sort ) {
+                    ?>class='sortkey'<?php
+                    $vars[ 'order' ] = $order == 'DESC'? 'ASC': 'DESC';
+                }
+                ?> href='?<?php
                 $vars[ 'sort' ] = $column;
+                $params = array();
                 foreach ( $vars as $key => $value ) {
                     $params[] = urlencode( $key ) . '=' . urlencode( $value );
                 }

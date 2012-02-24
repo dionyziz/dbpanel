@@ -31,6 +31,9 @@
             assert( $order == 'ASC' || $order == 'DESC' );
             $orderBy = 'ORDER BY ' . $sort . ' ' . $order;
         }
+        else {
+            $orderBy = '';
+        }
         $sql = 'SELECT
                     *
                 FROM

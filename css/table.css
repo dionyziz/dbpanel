@@ -32,3 +32,6 @@ tr {
     padding: 15px;
     line-height: 24px;
 }
+th a.sortkey {
+    color: #dd4b39;
+}
