@@ -1,6 +1,8 @@
 <?php
     // TODO: paginate
-    ?><table>
+    ?>
+<div class='dataview'><div class='tablewrap'>
+    <table>
         <thead>
             <tr>
             <?php
@@ -25,3 +27,14 @@
             }
         ?></tbody>
     </table>
+    <?php
+        if ( empty( $records ) ) {
+            ?>
+            <p class='emptytable'>
+                This table is empty.<br />
+                <a href=''>Add a row</a> or <a href=''>drop it</a>.
+            </div>
+            <?php
+        }
+    ?>
+</div></div>

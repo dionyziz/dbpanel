@@ -11,6 +11,9 @@
         ?>' />
         <title>dbPanel</title>
         <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css' />
-        <link href='css/style.css' rel='stylesheet' type='text/css' />
+        <link href='css/style.css' rel='stylesheet' />
+        <link href='css/table.css' rel='stylesheet' />
+        <link href='css/form.css' rel='stylesheet' />
+        <link href='css/topbar.css' rel='stylesheet' />
     </head>
     <body>
