@@ -31,10 +31,25 @@ function fragmentReplace( key, value ) {
 }
 
 $( '#db' ).change( function () {
+    if ( $( '#db' ).val() == '' ) {
+        // TODO: create new db
+        $( '#createdb' ).show();
+        $( '#createdb input[type="text"]' ).focus();
+        function close() {
+            $( '#createdb' ).hide();
+            return false;
+        }
+        $( '#createdb .overlay' ).click( close );
+        $( '#createdb .close' ).click( close );
+        $( '#createdb .modal' ).click( function( e ) {
+            e.stopPropagation();
+        } );
+        return false;
+    }
     fragmentReplace( 'db', this.value );
-    // TODO: create new db
 } );
 $( '#table' ).change( function () {
+    alert( $( '#table' ).val() );
     fragmentReplace( 'table', this.value );
     // TODO: create new table
 } );

@@ -53,3 +53,6 @@ a#account.active {
 #signoutform {
     display: none;
 }
+#createdb {
+    display: none;
+}
