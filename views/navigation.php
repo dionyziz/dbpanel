@@ -1,4 +1,4 @@
-<div class='topbar'>
+<div id='topbar'>
     <div class='options'>
         <select id='db'><?php
         foreach ( $dbs as $db ) {
@@ -7,9 +7,9 @@
                 ?> selected='selected'<?php
             }
             ?> value='<?php
-            echo htmlspecialchars( $db );
+            echo html( $db );
             ?>'><?php
-            echo htmlspecialchars( $db );
+            echo html( $db );
             ?></option><?php
         }
         ?>
@@ -26,9 +26,9 @@
                 ?> selected='selected'<?php
             }
             ?> value='<?php
-            echo htmlspecialchars( $table );
+            echo html( $table );
             ?>'><?php
-            echo htmlspecialchars( $table );
+            echo html( $table );
             ?></option><?php
         }
         ?>
@@ -40,22 +40,25 @@
         }
     ?>
     </div>
-    <a id='account' href='' class='active'><?php
-    echo htmlspecialchars( $username );
+    <a id='account' href='' class=''><?php
+    echo html( $username );
     ?>@<?php
-    echo htmlspecialchars( $hostname );
+    echo html( $hostname );
     ?></a>
     <div class='eof'></div>
 </div>
 <div id='accountmanagement'>
     <div class='details'>
         <strong><?php
-            echo htmlspecialchars( $username );
+            echo html( $username );
         ?></strong>@<?php
-            echo htmlspecialchars( $hostname );
+            echo html( $hostname );
         ?>
     </div>
     <div class='signout'>
-        <a href=''>Sign out</a>
+        <a href='' id='signout'>Sign out</a>
+        <form action='session/delete' method='post' id='signoutform'>
+            <input type='submit' value='Sign out' />
+        </form>
     </div>
 </div>

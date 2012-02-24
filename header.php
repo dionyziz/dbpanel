@@ -41,6 +41,11 @@
     }
     global $settings;
     $settings = include 'settings.php';
-    include 'models/db.php';
-    include 'models/db-admin.php';
+    $models = opendir( 'models' );
+    while ( ( $file = readdir( $models ) ) !== false ) {
+        if ( substr( $file, 0, 1 ) == '.' ) {
+            continue;
+        }
+        include 'models/' . $file;
+    }
 ?>

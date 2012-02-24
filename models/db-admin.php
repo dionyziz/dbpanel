@@ -26,7 +26,17 @@
         }
         return $ret;
     }
-    function db_all( $table ) {
-        return db_array( 'SELECT * FROM ' . $table . ' LIMIT 50', false, false, MYSQL_ASSOC );
+    function db_all( $table, $sort = false, $order = false ) {
+        if ( $sort !== false ) {
+            assert( $order == 'ASC' || $order == 'DESC' );
+            $orderBy = 'ORDER BY ' . $sort . ' ' . $order;
+        }
+        $sql = 'SELECT
+                    *
+                FROM
+                    ' . $table . '
+                    ' . $orderBy . '
+                LIMIT 50';
+        return db_array( $sql, false, false, MYSQL_ASSOC );
     }
 ?>

@@ -35,14 +35,21 @@ a#account {
 }
 a#account.active {
     background-color: white;
+    color: #333;
 }
-.topbar a:hover {
+#topbar a#account.active:hover {
+    background-color: white;
+}
+#topbar a:hover {
     background-color: #4c4c4c;
 }
-.topbar {
+#topbar {
     background: #2d2d2d;
 }
-.topbar .options {
+#topbar .options {
     padding: 3px;
     float: left;
+}
+#signoutform {
+    display: none;
 }

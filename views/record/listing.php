@@ -1,15 +1,25 @@
 <?php
     // TODO: paginate
-    ?>
+?>
 <div class='dataview'><div class='tablewrap'>
     <table>
         <thead>
             <tr>
             <?php
+            $vars = array();
+            foreach ( $_GET as $key => $value ) {
+                $vars[ $key ] = $value;
+            }
             foreach ( $columns as $column ) {
-                ?><th><?php
-                echo htmlspecialchars( $column );
-                ?></th><?php
+                ?><th><a href='?<?php
+                $vars[ 'sort' ] = $column;
+                foreach ( $vars as $key => $value ) {
+                    $params[] = urlencode( $key ) . '=' . urlencode( $value );
+                }
+                echo html( implode( '&', $params ) );
+                ?>'><?php
+                echo html( $column );
+                ?></a></th><?php
             }
             ?>
             </tr>
@@ -20,7 +30,7 @@
                 foreach ( $record as $value ) {
                     ?><td><?php
                     // TODO: truncate large data fields
-                    echo htmlspecialchars( $value );
+                    echo html( $value );
                     ?></td><?php
                 }
                 ?></tr><?php

@@ -17,5 +17,9 @@
             $_SESSION[ 'hostname' ] = $hostname;
             redirect();
         }
+        public function delete() {
+            session_destroy();
+            redirect();
+        }
     }
 ?>
