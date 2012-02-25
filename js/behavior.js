@@ -55,21 +55,3 @@ $( '#table' ).change( function () {
 } );
 // TODO: check if we're on the login form before focusing
 $( '#username' ).focus();
-// TODO: check if topbar is present before populating with events
-$( '#account' ).click( function( e ) {
-    $( '#accountmanagement' ).toggle();
-    $( '#account' ).toggleClass( 'active' );
-    e.stopPropagation();
-    return false;
-} );
-$( '#accountmanagement' ).click( function( e ) {
-    e.stopPropagation();
-} );
-$( document ).click( function() {
-    $( '#account' ).removeClass( 'active' );
-    $( '#accountmanagement' ).hide();
-} );
-$( '#signout' ).click( function() {
-    $( '#signoutform' ).submit();
-    return false;
-} );

@@ -1,6 +1,7 @@
 <?php
     function URL_replaceFragment( $params ) {
-        $params = array_merge( $_GET, $params );
+        $vars = array_merge( $_GET, $params );
+        $params = array();
         foreach ( $vars as $key => $value ) {
             $params[] = urlencode( $key ) . '=' . urlencode( $value );
         }

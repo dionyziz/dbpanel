@@ -1,9 +1,10 @@
 <div id='topbar'>
     <div class='options'>
-        <a id='db'><?php
+        <a href='' id='db'><?php
         echo $selected_db;
         ?></a>
-        <a id='table'><?php
+        <span></span>
+        <a href='' id='table'><?php
         echo $selected_table;
         ?></a>
     </div>
@@ -14,7 +15,7 @@
     ?></a>
     <div class='eof'></div>
 </div>
-<div id='accountmanagement'>
+<div id='accountmanagement' class='popdown'>
     <div class='details'>
         <strong><?php
             echo html( $username );
@@ -29,28 +30,36 @@
         </form>
     </div>
 </div>
-<ul id='databases'><?php
-    foreach ( $dbs as $db ) {
-        ?><li><a href='?<?php
-        echo html( URL_replaceFragment( array( 'db' => $db ) ) );
-        ?>'><?php
-        echo html( $db );
-        ?></a></li><?php
-    }
-    ?>
-    <li><a href=''>Create new database...</a></li>
-</ul>
-<ul id='tables'><?php
-foreach ( $tables as $table ) {
-    ?><li><a href='<?php
-    echo html( $table );
-    ?>'><?php
-    echo html( $table );
-    ?></a></li><?php
-}
-?>
-<li><a href=''>Create new table...</a></li>
-</ul>
+<div id='dbmanagement' class='popdown'>
+    <div class='details'>
+        <ul id='databases'><?php
+            foreach ( $dbs as $db ) {
+                ?><li><a href='?<?php
+                echo html( URL_replaceFragment( array( 'db' => $db ) ) );
+                ?>'><?php
+                echo html( $db );
+                ?></a></li><?php
+            }
+            ?>
+            <li><a href=''>Create new database...</a></li>
+        </ul>
+    </div>
+</div>
+<div id='tablemanagement' class='popdown'>
+    <div class='details'>
+        <ul id='tables'><?php
+        foreach ( $tables as $table ) {
+            ?><li><a href='?<?php
+            echo html( URL_replaceFragment( array( 'table' => $table ) ) );
+            ?>'><?php
+            echo html( $table );
+            ?></a></li><?php
+        }
+        ?>
+        <li><a href=''>Create new table...</a></li>
+        </ul>
+    </div>
+</div>
 <?php
 if ( $selected_db === false ) {
     ?>No databases found.<?php
