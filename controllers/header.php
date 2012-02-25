@@ -16,6 +16,7 @@
                 $selected_db = $db;
             }
             if ( $selected_db !== false ) {
+            	$db = $selected_db;
                 mysql_select_db( $selected_db );
                 $tables = db_list_tables();
                 $selected_table = reset( $tables );

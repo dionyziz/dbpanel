@@ -10,10 +10,10 @@
         echo $settings[ 'url' ];
         ?>' />
         <?php
-        // TODO: title should display: "table name" on "database name" at "hostname" - dbPanel
+        // title should display: "table name" on "database name" at "hostname" - dbPanel
         // The `at "hostname"' part should only be visible if not on localhost
         ?>
-        <title>dbPanel</title>
+        <title><?php echo ($title ? $title . ' - dbPanel' : 'dbPanel'); ?></title>
         <link rel="icon" type="image/png" href="http://www.defaulticon.com/sites/default/files/styles/icon-front-page-32x32-preview/public/field/image/database.png" />
         <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css' />
         <link href='css/style.css' rel='stylesheet' />
