@@ -16,16 +16,19 @@
                 view( 'record/listing', compact( 'columns', 'records', 'sort', 'order' ) );
             }
 			
-			// page title
-	       	if ($db) {
-        		$title = "'$selected_table' on '$db'";
-				$hostname = $_SESSION['hostname'];
-				if ($hostname != 'localhost') {
-					$title .= " at '$hostname'";
+            // Page title
+            // title shall display: "table name" on "database name" at "hostname" - dbPanel
+            // The `at "hostname"' part should only be visible if not on localhost
+            if ( $db ) {
+            	$title = "'$selected_table' on '$db'";
+            	$hostname = $_SESSION[ 'hostname' ];
+            	if ( $hostname != 'localhost' ) {
+					$title = $title . " at '$hostname'";
 				}
+				$title = $title . " - ";
 			}
 			
-			include 'views/header.php'; // moved in order to pass the page title
+            include 'views/header.php'; // moved in order to pass the page title
             include 'views/footer.php';
         }
     }
