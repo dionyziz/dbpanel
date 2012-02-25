@@ -23,7 +23,7 @@
             echo html( $hostname );
         ?>
     </div>
-    <div class='signout'>
+    <div class='alter'>
         <a href='' id='signout'>Sign out</a>
         <form action='session/delete' method='post' id='signoutform'>
             <input type='submit' value='Sign out' />
@@ -34,30 +34,44 @@
     <div class='details'>
         <ul id='databases'><?php
             foreach ( $dbs as $db ) {
-                ?><li><a href='?<?php
+                ?><li
+                <?php
+                if ( $db == $selected_db ) {
+                    ?>class='active'<?php
+                }
+                ?>
+                ><a href='?<?php
                 echo html( URL_replaceFragment( array( 'db' => $db ) ) );
                 ?>'><?php
                 echo html( $db );
                 ?></a></li><?php
             }
             ?>
-            <li><a href=''>Create new database...</a></li>
         </ul>
+        <div class='alter'>
+            <a href=''>Create new database...</a>
+        </div>
     </div>
 </div>
 <div id='tablemanagement' class='popdown'>
     <div class='details'>
         <ul id='tables'><?php
-        foreach ( $tables as $table ) {
-            ?><li><a href='?<?php
-            echo html( URL_replaceFragment( array( 'table' => $table ) ) );
-            ?>'><?php
-            echo html( $table );
-            ?></a></li><?php
-        }
-        ?>
-        <li><a href=''>Create new table...</a></li>
+            foreach ( $tables as $table ) {
+                ?><li <?php
+                if ( $table == $selected_table ) {
+                    ?>class='active'<?php
+                }
+                ?>><a href='?<?php
+                echo html( URL_replaceFragment( array( 'table' => $table ) ) );
+                ?>'><?php
+                echo html( $table );
+                ?></a></li><?php
+            }
+            ?>
         </ul>
+        <div class='alter'>
+            <a href=''>Create new table...</a>
+        </div>
     </div>
 </div>
 <?php

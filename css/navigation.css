@@ -7,7 +7,13 @@
     display: none;
 }
 .popdown .details {
-    padding: 4px 9px 6px 9px;
+    padding: 1px 9px 6px 9px;
+}
+.popdown li {
+    padding: 4px 0;
+}
+.popdown li.active {
+    font-weight: bold;
 }
 #accountmanagement .details {
     padding: 15px;
@@ -16,15 +22,15 @@
     right: 5px;
     top: 30px;
 }
-.signout {
+.popdown .alter {
     padding: 15px 15px 15px 10px;
     margin: 5px 0 0 0;
     border-top: 1px solid #eee;
 }
-#accountmanagement a {
+.popdown .alter a {
     padding: 7px;
 }
-#accountmanagement a:hover {
+.popdown .alter a:hover {
     background-color: #eff3fb;
 }
 #topbar a {
