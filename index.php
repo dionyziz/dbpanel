@@ -82,7 +82,6 @@
         }
     }
     try {
-    	//die("CONTROLLER: $controllername - METHOD: $methodname - ARGS: $arguments");
         call_user_func_array( array( $controllername, $methodname ), $arguments );
     }
     catch ( NotImplemented $e ) {
