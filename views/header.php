@@ -9,7 +9,15 @@
         global $settings;
         echo $settings[ 'url' ];
         ?>' />
-        <title><?php echo $title . 'dbPanel'; ?></title>
+        <title><?php
+        if ( isset( $title ) ) {
+            echo $title;
+            ?>dbPanel<?php
+        }
+        else {
+            ?>dbPanel<?php
+        }
+        ?></title>
         <link rel="icon" type="image/png" href="http://www.defaulticon.com/sites/default/files/styles/icon-front-page-32x32-preview/public/field/image/database.png" />
         <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css' />
         <link href='css/style.css' rel='stylesheet' />

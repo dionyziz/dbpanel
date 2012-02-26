@@ -38,6 +38,7 @@
     </table>
     <?php
         if ( empty( $records ) ) {
+            // TODO: Make "Add a row" and "Drop it" links work.
             ?>
             <p class='emptytable'>
                 This table is empty.<br />

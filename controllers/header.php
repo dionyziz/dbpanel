@@ -28,7 +28,11 @@
             $username = $_SESSION[ 'username' ];
             $hostname = $_SESSION[ 'hostname' ];
             view( 'navigation', compact( 'dbs', 'tables', 'selected_db', 'selected_table', 'username', 'hostname' ) );
-            return $selected_table;
+
+            return array(
+                'table' => $selected_table,
+                'db' => $selected_db
+            );
         }
     }
 ?>
