@@ -26,7 +26,7 @@
         }
         return $ret;
     }
-    function db_all( $table, $sort = false, $order = false ) {
+    function db_all( $table, $sort = false, $order = false , $limit = 50, $offset = 0) {
         if ( $sort !== false ) {
             assert( $order == 'ASC' || $order == 'DESC' );
             $orderBy = 'ORDER BY ' . $sort . ' ' . $order;
@@ -34,12 +34,21 @@
         else {
             $orderBy = '';
         }
+        if (!$limit) {
+            $limit = 50;
+        }
+        if (!$offset) {
+            $offset = 0;
+        }
         $sql = 'SELECT
                     *
                 FROM
                     ' . $table . '
                     ' . $orderBy . '
-                LIMIT 50';
+                LIMIT
+                	' . $limit . '
+                OFFSET
+                	' . $offset;
         return db_array( $sql, false, false, MYSQL_ASSOC );
     }
 ?>
