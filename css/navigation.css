@@ -1,43 +1,67 @@
-#accountmanagement {
+.popdown {
     position: absolute;
-    right: 5px;
-    top: 30px;
     background-color: white;
     border: 1px solid #ccc;
     border-top-style: none;
     box-shadow: 0 0 4px rgba( 0, 0, 0, 0.4 );
     display: none;
 }
+.popdown .details {
+    padding: 1px 9px 6px 9px;
+}
+.popdown li {
+    padding: 4px 0;
+}
+.popdown li.active {
+    font-weight: bold;
+}
 #accountmanagement .details {
     padding: 15px;
 }
-.signout {
+#accountmanagement {
+    right: 5px;
+    top: 30px;
+}
+.popdown .alter {
     padding: 15px 15px 15px 10px;
     margin: 5px 0 0 0;
     border-top: 1px solid #eee;
 }
-#accountmanagement a {
+.popdown .alter a {
     padding: 7px;
 }
-#accountmanagement a:hover {
+.popdown .alter a:hover {
     background-color: #eff3fb;
 }
-a#account {
+#topbar a {
     color: #ccc;
     text-decoration: none;
     font-size: 110%;
-    float: right;
-    padding: 6px 8px;
-    margin-right: 6px;
+    padding: 6px 8px 7px 8px;
+    margin: 0 3px;
     z-index: 5;
     display: block;
     position: relative;
+    float: left;
 }
-a#account.active {
+#topbar a#account {
+    margin-right: 6px;
+    float: right;
+}
+#topbar .options span {
+    float: left;
+    padding: 0;
+    color: white;
+    background: transparent url( '../images/arrow.png' ) no-repeat 0 8px;
+    display: block;
+    width: 16px;
+    height: 31px;
+}
+#topbar a.active {
     background-color: white;
     color: #333;
 }
-#topbar a#account.active:hover {
+#topbar a.active:hover {
     background-color: white;
 }
 #topbar a:hover {
@@ -47,9 +71,11 @@ a#account.active {
     background: #2d2d2d;
 }
 #topbar .options {
-    padding: 3px;
     float: left;
 }
 #signoutform {
+    display: none;
+}
+#createdb {
     display: none;
 }

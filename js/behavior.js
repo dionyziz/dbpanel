@@ -31,30 +31,27 @@ function fragmentReplace( key, value ) {
 }
 
 $( '#db' ).change( function () {
+    if ( $( '#db' ).val() == '' ) {
+        // TODO: create new db
+        $( '#createdb' ).show();
+        $( '#createdb input[type="text"]' ).focus();
+        function close() {
+            $( '#createdb' ).hide();
+            return false;
+        }
+        $( '#createdb .overlay' ).click( close );
+        $( '#createdb .close' ).click( close );
+        $( '#createdb .modal' ).click( function( e ) {
+            e.stopPropagation();
+        } );
+        return false;
+    }
     fragmentReplace( 'db', this.value );
-    // TODO: create new db
 } );
 $( '#table' ).change( function () {
+    alert( $( '#table' ).val() );
     fragmentReplace( 'table', this.value );
     // TODO: create new table
 } );
 // TODO: check if we're on the login form before focusing
 $( '#username' ).focus();
-// TODO: check if topbar is present before populating with events
-$( '#account' ).click( function( e ) {
-    $( '#accountmanagement' ).toggle();
-    $( '#account' ).toggleClass( 'active' );
-    e.stopPropagation();
-    return false;
-} );
-$( '#accountmanagement' ).click( function( e ) {
-    e.stopPropagation();
-} );
-$( document ).click( function() {
-    $( '#account' ).removeClass( 'active' );
-    $( '#accountmanagement' ).hide();
-} );
-$( '#signout' ).click( function() {
-    $( '#signoutform' ).submit();
-    return false;
-} );

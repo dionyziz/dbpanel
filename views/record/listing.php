@@ -16,11 +16,7 @@
                 }
                 ?> href='?<?php
                 $vars[ 'sort' ] = $column;
-                $params = array();
-                foreach ( $vars as $key => $value ) {
-                    $params[] = urlencode( $key ) . '=' . urlencode( $value );
-                }
-                echo html( implode( '&', $params ) );
+                echo html( URL_replaceFragment( $vars ) );
                 ?>'><?php
                 echo html( $column );
                 ?></a></th><?php
