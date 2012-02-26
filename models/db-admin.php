@@ -1,4 +1,26 @@
 <?php
+    function db_drop_database( $name ) {
+        // TODO: drop a database
+    }
+    function db_drop_table( $name ) {
+        // TODO: drop a table
+    }
+    function db_create_database( $name ) {
+        return db(
+            'CREATE DATABASE '
+            . $name .
+            ' DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci'
+        );
+    }
+    function db_create_table( $name/*, ??? */ ) {
+        // TODO: create a table
+    }
+    function db_alter_table( $name/*, ??? */ ) {
+        // TODO: alter a table
+    }
+    function db_truncate( $table ) {
+        // TODO: truncate a table
+    }
     function db_list_databases() {
         $ret = array();
         $dbs = db_array( 'SHOW DATABASES' );

@@ -1,14 +1,8 @@
 <?php
-    class HeaderController {
-        public function view( $db, $table ) {
-            if ( !isset( $_SESSION[ 'username' ] ) ) {
-                redirect( 'session/create' );
-            }
-            $link = db_connect( $_SESSION[ 'username' ], $_SESSION[ 'password' ], $_SESSION[ 'hostname' ] );
-            if ( $link === false ) {
-                // TODO: fix this link, show appropriate error message
-                redirect( 'login?error=invalid' );
-            }
+    class HeaderController extends ControllerBase {
+        public static function view( $db, $table ) {
+            ControllerBase::connect();
+
             $dbs = db_list_databases();
             $selected_db = reset( $dbs );
             $selected_table = false;

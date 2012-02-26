@@ -49,7 +49,7 @@
             ?>
         </ul>
         <div class='alter'>
-            <a href=''>Create new database...</a>
+            <a id='createdbbutton' href=''>Create new database...</a>
         </div>
     </div>
 </div>
@@ -74,18 +74,27 @@
             ?>
         </ul>
         <div class='alter'>
-            <a href=''>Create new table...</a>
+            <a id='createtablebutton' href=''>Create new table...</a>
         </div>
     </div>
 </div>
 <?php
 if ( $selected_db === false ) {
-    ?>No databases found.<?php
-    // TODO: offer ability to create database here
+    // TODO: make Create a database link work
+    ?>
+    <p class='callforaction'>
+    No databases on this server.<br />
+    <a href=''>Create a database<a/>
+    </p><?php
 }
 if ( $selected_table === false ) {
-    // TODO: prompt to create table
-    ?>No tables found.<?php
+    // TODO: make Create a table link work
+    ?>
+    <p class='callforaction'>
+    No tables in database <?php
+    echo $selected_db;
+    ?>.<br /><a href=''>Create a table</a>
+    </p><?php
 }
 ?>
 <div id='createdb'><div class='overlay'>
@@ -93,7 +102,7 @@ if ( $selected_table === false ) {
         <a href='' class='close'>&times;</a>
         <form action='db/create' method='post'>
             <label>Database name:</label>
-            <input type='text' value='' />
+            <input type='text' value='' name='name' />
             <input type='submit' class='button' value='Create' />
         </form>
     </div>

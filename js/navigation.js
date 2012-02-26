@@ -41,6 +41,20 @@ var Menu = {
             $( '#signoutform' ).submit();
             return false;
         } );
+        $( '#createdbbutton' ).click( function () {
+            $( '#createdb' ).show();
+            $( '#createdb input[type="text"]' ).focus();
+            function close() {
+                $( '#createdb' ).hide();
+                return false;
+            }
+            $( '#createdb .overlay' ).click( close );
+            $( '#createdb .close' ).click( close );
+            $( '#createdb .modal' ).click( function( e ) {
+                e.stopPropagation();
+            } );
+            return false;
+        } );
     },
     hideAll: function() {
         for ( var i = 0; i < Menu.popDowns.length; ++i ) {

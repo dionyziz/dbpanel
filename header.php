@@ -49,4 +49,5 @@
         }
         include 'models/' . $file;
     }
+    include 'controllers/base.php';
 ?>

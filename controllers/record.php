@@ -1,6 +1,6 @@
 <?php
     class RecordController {
-        public function listing( $db, $table, $sort, $order, $limit = 50, $offset = 0 ) {
+        public static function listing( $db, $table, $sort, $order, $limit = 50, $offset = 0 ) {
             ob_start();
             include 'controllers/header.php';
             $selection = HeaderController::View( $db, $table );
@@ -22,6 +22,7 @@
             // Page title
             if ( $db ) {
             	// handle the case of empty database
+                $title = '';
             	if ( $selected_table ) {
             		$title = "$selected_table on "; 
             	}

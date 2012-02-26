@@ -1,9 +1,9 @@
 <?php
     class SessionController {
-        public function createView( $error ) {
+        public static function createView( $error ) {
             view( 'login', compact( 'error' ), true );
         }
-        public function create( $username, $password ) {
+        public static function create( $username, $password ) {
             $parts = explode( '@', $username );
             $username = $parts[ 0 ];
             if ( count( $parts ) == 2 ) {
@@ -17,7 +17,7 @@
             $_SESSION[ 'hostname' ] = $hostname;
             redirect();
         }
-        public function delete() {
+        public static function delete() {
             session_destroy();
             redirect();
         }

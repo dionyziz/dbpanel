@@ -40,7 +40,7 @@
         if ( empty( $records ) ) {
             // TODO: Make "Add a row" and "Drop it" links work.
             ?>
-            <p class='emptytable'>
+            <p class='callforaction'>
                 This table is empty.<br />
                 <a href=''>Add a row</a> or <a href=''>drop it</a>.
             </div>

@@ -25,13 +25,6 @@ thead tr {
 tr {
     border-bottom: 1px solid #e5e5e5;
 }
-.emptytable {
-    text-align: center;
-    border-bottom: 1px solid #e5e5e5;
-    margin: 0;
-    padding: 15px;
-    line-height: 24px;
-}
 th a.sortkey {
     color: #dd4b39;
 }
