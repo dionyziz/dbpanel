@@ -56,6 +56,10 @@
 <div id='tablemanagement' class='popdown'>
     <div class='details'>
         <ul id='tables'><?php
+            // TODO: if too many tables are present in a database, show them in multiple column view
+            // 10 tables per column; the first column should show the first tables (alphabetically), the second
+            // the next etc.
+            // The same should be done with databases. 
             foreach ( $tables as $table ) {
                 ?><li <?php
                 if ( $table == $selected_table ) {
