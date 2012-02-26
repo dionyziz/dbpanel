@@ -1,6 +1,6 @@
 <?php
     class RecordController {
-        public function listing( $db, $table, $sort, $order ) {
+        public function listing( $db, $table, $sort, $order, $limit = 50, $offset = 0 ) {
             include 'controllers/header.php';
 			// $db is passed by reference, we need to have its value on title
             $selected_table = HeaderController::View( &$db, $table );
@@ -12,7 +12,7 @@
                 if ( $order != 'DESC' ) {
                     $order = 'ASC';
                 }
-                $records = db_all( $selected_table, $sort, $order );
+                $records = db_all( $selected_table, $sort, $order, $limit, $offset );
                 view( 'record/listing', compact( 'columns', 'records', 'sort', 'order' ) );
             }
 			
