@@ -29,8 +29,7 @@
                 ?><tr><?php
                 foreach ( $record as $value ) {
                     ?><td><?php
-                    // TODO: truncate large data fields
-                    echo html( $value );
+                    echo html( $value, true );
                     ?></td><?php
                 }
                 ?></tr><?php
