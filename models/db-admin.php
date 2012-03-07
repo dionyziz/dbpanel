@@ -2,13 +2,13 @@
     function db_drop_database( $name ) {
         return db(
             'DROP DATABASE '
-            . $name .
+            . $name
         );
     }
     function db_drop_table( $name ) {
         return db(
             'DROP TABLE '
-            . $name .
+            . $name
         );
     }
     function db_create_database( $name ) {
@@ -27,7 +27,7 @@
     function db_truncate( $table ) {
         return db(
             'TRUNCATE TABLE '
-            . $table .
+            . $table
         );
     }
     function db_list_databases() {
