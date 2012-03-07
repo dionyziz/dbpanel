@@ -1,9 +1,15 @@
 <?php
     function db_drop_database( $name ) {
-        // TODO: drop a database
+        return db(
+            'DROP DATABASE '
+            . $name
+        );
     }
     function db_drop_table( $name ) {
-        // TODO: drop a table
+        return db(
+            'DROP TABLE '
+            . $name
+        );
     }
     function db_create_database( $name ) {
         return db(
@@ -19,7 +25,10 @@
         // TODO: alter a table
     }
     function db_truncate( $table ) {
-        // TODO: truncate a table
+        return db(
+            'TRUNCATE TABLE '
+            . $table
+        );
     }
     function db_list_databases() {
         $ret = array();
