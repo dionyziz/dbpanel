@@ -48,7 +48,7 @@
         }
         return $ret;
     }
-    function db_all( $table, $sort = false, $order = false , $limit = 50, $offset = 0 ) {
+    function db_all( $table, $sort = false, $order = false, $offset = 0, $limit = 50 ) {
         if ( $sort !== false ) {
             assert( $order == 'ASC' || $order == 'DESC' );
             $orderBy = 'ORDER BY ' . $sort . ' ' . $order;

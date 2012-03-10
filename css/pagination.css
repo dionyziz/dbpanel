@@ -1,0 +1,19 @@
+div.pagination {
+    width: 300px;
+    margin: 10px auto;
+    text-align: center;
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    text-shadow: 1px 1px 0px white;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba( 0, 0, 0, 0.2 );
+}
+div.pagination a:first-child {
+    float: left;
+    padding: 0 0;
+}
+div.pagination a:last-child {
+    display: block;
+    text-align: right;
+}

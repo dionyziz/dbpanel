@@ -25,5 +25,6 @@
         <link href='css/table.css' rel='stylesheet' />
         <link href='css/form.css' rel='stylesheet' />
         <link href='css/navigation.css' rel='stylesheet' />
+        <link href='css/pagination.css' rel='stylesheet' />
     </head>
     <body>

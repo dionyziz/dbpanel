@@ -1,8 +1,8 @@
 <?php
-    // TODO: paginate
+    // TODO: pagination with infinite scrolling
 ?>
 <div class='dataview'><div class='tablewrap'>
-    <table>
+    <table id='datatarget'>
         <thead>
             <tr>
             <?php
@@ -47,4 +47,15 @@
             <?php
         }
     ?>
+    <div class='pagination'>
+        <a href='?<?php
+        $vars = $_GET;
+        $vars[ 'offset' ] = max( 0, $offset - $limit );
+        echo html( URL_replaceFragment( $vars ) );
+        ?>'>Previous records</a>
+        <a href='?<?php
+        $vars[ 'offset' ] = $offset + $limit;
+        echo html( URL_replaceFragment( $vars ) );
+        ?>'>Next records</a>
+    </div>
 </div></div>

@@ -78,7 +78,12 @@
             $arguments[] = $http_vars[ $parameter->name ];
         }
         else {
-            $arguments[] = null;
+            if ( $parameter->isOptional() ) {
+                $arguments[] = $parameter->getDefaultValue();
+            }
+            else {
+                $arguments[] = null;
+            }
         }
     }
     try {

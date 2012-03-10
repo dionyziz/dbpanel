@@ -1,6 +1,6 @@
 <?php
     class RecordController {
-        public static function listing( $db, $table, $sort, $order, $limit = 50, $offset = 0 ) {
+        public static function listing( $db, $table, $sort, $order, $offset = 0, $limit = 50 ) {
             ob_start();
             include 'controllers/header.php';
             $selection = HeaderController::View( $db, $table );
@@ -15,8 +15,8 @@
                     $order = 'ASC';
                 }
                 // TODO: validation of parameters at this point
-                $records = db_all( $selected_table, $sort, $order, $limit, $offset );
-                view( 'record/listing', compact( 'columns', 'records', 'sort', 'order' ) );
+                $records = db_all( $selected_table, $sort, $order, $offset, $limit );
+                view( 'record/listing', compact( 'columns', 'records', 'sort', 'order', 'offset', 'limit' ) );
             }
 			
             // Page title
