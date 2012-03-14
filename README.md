@@ -17,11 +17,11 @@ dbPanel are:
  * Build an application that is very extensible. This means that the code is
    well-organized and well-architectured using principles of software design 
    for big projects, in a way that many people can contribute to it. We're
-   splitting up the code in a modular way, always seperating business logic and
-   presentation and building libraries as necessary. Any junior programmer
-   should be able to extend parts of the software and understand the basic
-   structure. We want many people to meaningfully contribute, and this is the
-   only way.
+   splitting up the code into orthogonal modules, always seperating business
+   logic and presentation and building libraries as necessary. Any junior
+   programmer should be able to extend parts of the software and understand the
+   basic structure. We want many people to meaningfully contribute, and this is
+   the only way.
 
 For now, we do not care so much about the following:
  
@@ -77,6 +77,7 @@ request many times. Your pull requests will get rejected and you're expected to 
 them before they get merged. Please accept this as part of your workflow and do not
 hesitate to make many pull requests at will. Make bold edits often and do not be afraid
 to repeatedly pull request and discuss them. This is the way an open source project
+works.
 
 License
 =======
