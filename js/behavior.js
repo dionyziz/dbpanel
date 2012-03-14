@@ -44,13 +44,18 @@ $( 'td a' ).live( 'click', function () {
                 function ( e ) {
                     switch ( e.keyCode ) {
                         case 27: // ESC
+                            tr.find( 'td input' ).remove();
+                            tr.find( 'td' ).html( function () {
+                                return '<a href="">' + $( this ).find( 'span.original' ).html() + '</a>';
+                            } );
+                            tr.toggleClass( 'editable' );
                             break;
                         case 13: // Enter
                             var set = {};
                             var where = {};
                             var i = 0;
 
-                            td.parent().find( 'td input' ).each( function () {
+                            tr.find( 'td input' ).each( function () {
                                 var column = $( td.parents( 'table' ).find( 'thead tr th a' )[ i ] ).text();
                                 set[ column ] = $( this ).val();
                                 where[ column ] = $( this ).parent().find( '.original' ).text();
