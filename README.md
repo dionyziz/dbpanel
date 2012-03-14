@@ -1,6 +1,7 @@
 dbPanel <https://github.com/dionyziz/dbpanel>
 
-WHAT IS DBPANEL?
+dbPanel
+=======
 
 dbPanel is a MySQL administration web application in PHP. dbPanel can't do much
 yet. It is open source and we'd love to have you help us out. The two goals of
