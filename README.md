@@ -30,6 +30,7 @@ For now, we do not care so much about the following:
  * Internationalization
 
 The key concepts to keep in mind are:
+
  * Easy
  * Intuitive
  * Fast
