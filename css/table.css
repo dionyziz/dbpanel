@@ -14,7 +14,7 @@ thead th {
     /* font-weight: normal; */
 }
 td, th {
-    padding: 10px;
+    padding: 7px;
 }
 th {
     text-align: left;
@@ -27,4 +27,33 @@ tr {
 }
 th a.sortkey {
     color: #dd4b39;
+}
+table a {
+    padding: 5px;
+}
+td a {
+    color: black;
+    border: 1px solid transparent;
+}
+td a:hover {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 3px;
+    box-shadow: inset 0 0 7px -2px rgba( 0, 0, 0, 0.5 );
+}
+td input {
+    margin: 0;
+    width: auto;
+}
+tr.editable td {
+    padding: 2px 7px;
+}
+tr.editable td span.original {
+    display: none;
+}
+tr.editable input.saving {
+    border: 1px solid transparent;
+    color: #ccc;
+    box-shadow: none;
+    background-color: transparent;
 }

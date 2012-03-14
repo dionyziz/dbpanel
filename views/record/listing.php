@@ -2,7 +2,13 @@
     // TODO: pagination with infinite scrolling
 ?>
 <div class='dataview'><div class='tablewrap'>
-    <table id='datatarget'>
+    <table id='datatarget' sql-table='<?php
+        // TODO: devise a mechanism to pass Javascript variables from views to the JS at
+        // the bottom of the page and make this HTML5-standard-compliant
+        echo $selected_table;
+        ?>' sql-db='<?php
+        echo $db;
+        ?>'>
         <thead>
             <tr>
             <?php
@@ -28,9 +34,9 @@
             foreach ( $records as $record ) {
                 ?><tr><?php
                 foreach ( $record as $value ) {
-                    ?><td><?php
+                    ?><td><a href=''><?php
                     echo html( $value, true );
-                    ?></td><?php
+                    ?></a></td><?php
                 }
                 ?></tr><?php
             }
