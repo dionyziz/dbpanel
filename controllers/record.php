@@ -49,5 +49,12 @@
             // TODO: return the ACTUAL new data (as the DBMS may modify it before updating (e.g. through triggers))
             // and return that
         }
+        public static function delete( $db, $table, $where ) {
+            ControllerBase::connect();
+            mysql_select_db( $db );
+            $where = get_object_vars( json_decode( $where ) );
+            db_delete( $table, $where, 1 );
+            ?>OK<?php
+        }
     }
 ?>

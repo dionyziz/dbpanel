@@ -101,17 +101,23 @@
         );
         return mysql_insert_id();
     }
-    function db_delete( $table, $where ) {
+    function db_delete( $table, $where, $limit = 0 ) {
+        assert( is_numeric( $limit ) );
         $fields = array();
         foreach ( $where as $field => $value ) {
             $fields[] = "$field = :$field";
         }
+        $sql = 'DELETE FROM '
+                . $table
+                . ' WHERE '
+                . implode( ' AND ', $fields );
+        if ( $limit > 0 ) {
+            $sql .= ' LIMIT ' . $limit;
+        }
         db(
-            'DELETE FROM '
-            . $table
-            . ' WHERE '
-            . implode( ' AND ', $fields ),
-            $where
+            $sql,
+            $where,
+            $limit
         );
         return mysql_affected_rows();
     }

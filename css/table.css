@@ -57,3 +57,20 @@ tr.editable input.saving {
     box-shadow: none;
     background-color: transparent;
 }
+td button.delete {
+    visibility: hidden;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    float: right;
+    margin: 0;
+    padding: 0 3px;
+    border-radius: 3px;
+}
+tr:hover button.delete {
+    visibility: visible;
+}
+td button.delete:hover {
+    background-color: #36c;
+    color: white;
+}

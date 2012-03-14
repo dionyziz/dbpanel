@@ -45,7 +45,7 @@ $( 'td a' ).live( 'click', function () {
                     switch ( e.keyCode ) {
                         case 27: // ESC
                             tr.find( 'td input' ).remove();
-                            tr.find( 'td' ).html( function () {
+                            tr.find( 'td span.original' ).parent().html( function () {
                                 return '<a href="">' + $( this ).find( 'span.original' ).html() + '</a>';
                             } );
                             tr.toggleClass( 'editable' );
@@ -102,4 +102,36 @@ $( 'td a' ).live( 'click', function () {
     tr.toggleClass( 'editable' );
     td.find( 'input' ).select().focus();
     return false;
+} );
+$( 'td button.delete' ).click( function () {
+    var td = $( this ).parent();
+    var tr = td.parent();
+
+    var where = {};
+    var i = 0;
+
+    tr.find( 'td a, td .original' ).each( function () {
+        var field = $( this ).parent();
+        var column = $( td.parents( 'table' ).find( 'thead tr th a' )[ i ] ).text();
+        if ( field.find( '.original' ).length ) {
+            where[ column ] = field.find( '.original' ).text();
+        }
+        else {
+            where[ column ] = field.find( 'a' ).text();
+        }
+        ++i;
+    } );
+
+    where = JSON.stringify( where );
+
+    document.body.style.cursor = 'wait';
+
+    $.post( 'record/delete', {
+        'table': tr.parents( 'table' ).attr( 'sql-table' ),
+        'db': tr.parents( 'table' ).attr( 'sql-db' ),
+        'where' : where
+    }, function () {
+        tr.remove();
+        document.body.style.cursor = 'default';
+    } );
 } );

@@ -28,6 +28,7 @@
                 ?></a></th><?php
             }
             ?>
+                <th></th>
             </tr>
         </thead>
         <tbody><?php
@@ -38,7 +39,9 @@
                     echo html( $value, true );
                     ?></a></td><?php
                 }
-                ?></tr><?php
+                ?>
+                    <td><button title='Delete record' class='delete'>&times;</button></td>
+                </tr><?php
             }
         ?></tbody>
     </table>
