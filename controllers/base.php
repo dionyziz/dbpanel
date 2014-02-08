@@ -1,6 +1,6 @@
 <?php
     class ControllerBase {
-        function connect() {
+        public static function connect() {
             // TODO: make this accept a db parameter and do a mysql_select_db here
             // and move code out of all the callers
 
