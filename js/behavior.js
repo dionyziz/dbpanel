@@ -144,8 +144,31 @@ $( 'tr.newrecord' ).keydown( function ( e ) {
     switch ( e.keyCode ) {
         case 13: // Enter
             tr = $( this );
+            var set = {};
+            var i = 0;
+
             tr.find( 'input' ).each( function () {
-                console.log( $( this ).val() );
+                var column = $( tr.parents( 'table' ).find( 'thead tr th a' )[ i ] ).text();
+                set[ column ] = $( this ).val();
+
+                ++i;
+            } );
+
+            set = JSON.stringify( set );
+
+            document.body.style.cursor = 'wait';
+            $.post( 'record/create', {
+                'table': tr.parents( 'table' ).attr( 'sql-table' ),
+                'db': tr.parents( 'table' ).attr( 'sql-db' ),
+                'set': set
+            }, function ( data, textStatus ) {
+                if ( data != 'OK' ) {
+                    alert( data );
+                    window.location.reload();
+                    return;
+                }
+                document.body.style.cursor = 'default';
+                window.location.reload();
             } );
             break;
     }
