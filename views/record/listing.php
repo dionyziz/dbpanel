@@ -38,7 +38,8 @@
                     <input type='text'<?php
                     if ( $columns[ 0 ] == $column ) {
                         ?> autofocus<?php
-                    } ?>>
+                    }
+                    ?>>
                 </td><?php
             }
             ?>
