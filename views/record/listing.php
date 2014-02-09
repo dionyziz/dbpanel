@@ -31,7 +31,19 @@
                 <th></th>
             </tr>
         </thead>
-        <tbody><?php
+        <tbody>
+            <tr class='newrecord editable'><?php
+            foreach ( $columns as $column ) {
+                ?><td>
+                    <input type='text'<?php
+                    if ( $columns[ 0 ] == $column ) {
+                        ?> autofocus<?php
+                    }
+                    ?>>
+                </td><?php
+            }
+            ?>
+            </tr><?php
             foreach ( $records as $record ) {
                 ?><tr><?php
                 foreach ( $record as $value ) {
@@ -51,7 +63,7 @@
             ?>
             <p class='callforaction'>
                 This table is empty.<br />
-                <a href=''>Add a row</a> or <a href=''>drop it</a>.
+                <a href='' class='add'>Add a row</a> or <a href='' class='drop'>drop it</a>.
             </div>
             <?php
         }

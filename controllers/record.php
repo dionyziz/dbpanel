@@ -1,5 +1,12 @@
 <?php
     class RecordController {
+        public static function create( $db, $table, $set ) {
+            ControllerBase::connect();
+            mysql_select_db( $db );
+            $set = get_object_vars( json_decode( $set ) );
+            db_insert( $table, $set );
+            ?>OK<?php
+        }
         public static function listing( $db, $table, $sort, $order, $offset = 0, $limit = 50 ) {
             ob_start();
             include 'controllers/header.php';
