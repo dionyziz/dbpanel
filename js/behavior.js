@@ -137,7 +137,7 @@ $( 'td button.delete' ).click( function () {
 } );
 $( '.callforaction > a.add' ).click( function () {
     // Add row
-    $( 'tr.newrecord > td > input' )[0].focus();
+    $( 'tr.newrecord > td > input' )[ 0 ].focus();
     return false;
 } );
 $( 'tr.newrecord' ).keydown( function ( e ) {
