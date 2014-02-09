@@ -35,7 +35,8 @@
             <tr class='newrecord editable'><?php
             foreach ( $columns as $column ) {
                 ?><td>
-                    <input type='text'<?php if ( $columns[ 0 ] == $column ) {
+                    <input type='text'<?php
+                    if ( $columns[ 0 ] == $column ) {
                         ?> autofocus<?php
                     } ?>>
                 </td><?php
