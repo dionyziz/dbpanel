@@ -135,3 +135,22 @@ $( 'td button.delete' ).click( function () {
         document.body.style.cursor = 'default';
     } );
 } );
+$( '.callforaction > a.add' ).click( function () {
+    // Add row
+    $( 'tr.newrecord > td > input' )[0].focus();
+    return false;
+} );
+$( 'tr.newrecord' ).keydown( function ( e ) {
+    switch ( e.keyCode ) {
+        case 13: // Enter
+            tr = $( this );
+            tr.find( 'input' ).each( function () {
+                console.log( $( this ).val() );
+            } );
+            break;
+    }
+} );
+$( '.callforaction > a.drop' ).click( function () {
+    // Drop table
+    return false;
+} );
